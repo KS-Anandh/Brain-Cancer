@@ -79,7 +79,7 @@ const App = () => {
         <div className="image-container">
           <h3>Processed Image</h3>
           <img src={`data:image/png;base64,${responseData}`} alt="Processed" className="result-image" />
-           <h3 className="cancer-type"><strong>Detected Cancer Type:</strong> {cancerType}</h3>
+       
         </div>
       )}
 
