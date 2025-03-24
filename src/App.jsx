@@ -4,6 +4,7 @@ const App = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [responseData, setResponseData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [cancerType, setCancerType] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -44,6 +45,11 @@ const App = () => {
       const result = await response.json();
       console.log(result);
       setResponseData(result.outputs[0]["output_image"].value);
+       if (result.outputs[0]?.detections?.length > 0) {
+      setCancerType(result.outputs[0].detections[0].class);
+    } else {
+      setCancerType("Unknown / Not Detected");
+    }
       setLoading(false);
     };
   };
@@ -73,6 +79,7 @@ const App = () => {
         <div className="image-container">
           <h3>Processed Image</h3>
           <img src={`data:image/png;base64,${responseData}`} alt="Processed" className="result-image" />
+           <h3 className="cancer-type"><strong>Detected Cancer Type:</strong> {cancerType}</h3>
         </div>
       )}
 
