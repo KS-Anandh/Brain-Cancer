@@ -63,7 +63,7 @@ const App = () => {
           <h4>Early Brain Cancer Detection</h4>
         </div>
         <div className="nav-college">
-          <img src="src\assets\logo (3).png" alt="" />
+          <img src="src\assets\kec.png" alt="" />
           <div>
             <h2>Kuppam Engineering College</h2>
             <p>(UGC-AUTONOMOUS)</p>
