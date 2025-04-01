@@ -1,4 +1,5 @@
 import { useState } from "react";
+import logo from '../src/assets/kec.png'
 
 const App = () => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -63,7 +64,7 @@ const App = () => {
           <h4>Early Brain Cancer Detection</h4>
         </div>
         <div className="nav-college">
-          <img src="src\assets\kec.png" alt="" />
+          <img src={logo} alt="" />
           <div>
             <h2>Kuppam Engineering College</h2>
             <p>(UGC-AUTONOMOUS)</p>
