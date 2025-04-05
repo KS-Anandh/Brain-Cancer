@@ -31,7 +31,7 @@ const App = () => {
 
       // Send to Roboflow API
       const response = await fetch(
-        "https://detect.roboflow.com/infer/workflows/anandh/custom-workflow-3",
+        "https://detect.roboflow.com/infer/workflows/anandh/detect-count-and-visualize-3",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
