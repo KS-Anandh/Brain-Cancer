@@ -232,7 +232,7 @@ const App = () => {
       {/* Footer */}
       <div className="footer">
         Team Guide:{" "}
-        <span style={{ color: "orangered" }}>Sathiyavani MTech</span> <br />
+        <span style={{ color: "orangered" }}>Mrs.V.Sathiyavani M.E.,(Ph.D.,)</span> <br />
         Team Leader: <span style={{ color: "orangered" }}>S Anandh</span> <br />
         Team Members:{" "}
         <span style={{ color: "orangered" }}>Parvez, D Chandu, M Likitha</span>
