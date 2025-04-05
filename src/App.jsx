@@ -190,7 +190,7 @@ const App = () => {
       ) : (
         <></>
       )}
-       {cancerName && cancerName == "Pituitary" ?
+       {cancerName && cancerName == "pituitary" ?
        <div className="cancerIntructions">
         <ul>
           <li>Follow Medication Plan – Take hormone therapy (dopamine agonists for prolactinomas) as prescribed.</li>
