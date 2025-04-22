@@ -7,6 +7,7 @@ const App = () => {
   const [cancerName, setCancerName] = useState(null);
   const [patient, setPatient] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [user,setUser]=useState('p');
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
@@ -83,7 +84,18 @@ const App = () => {
               setPatient(e.target.value);
             }}
           />
-
+          <div>
+          <label>I am a </label>
+           <select 
+           onChange={(e)=>{
+              setUser(e.target.value);
+              console.log(user)
+           }}
+           >
+            <option value="p">Patient</option>
+            <option value="d">Doctor</option>
+           </select>
+          </div>
           <input
             type="file"
             accept="image/*"
@@ -128,7 +140,7 @@ const App = () => {
         </div>
       )}
 
-      {cancerName && cancerName == "glioma" ? (
+           {cancerName && cancerName == "glioma" && user=='p'? (
         <div className="cancerIntructions">
           <ul>
             <li>
@@ -161,7 +173,7 @@ const App = () => {
       ) : (
         <></>
       )}
-      {cancerName && cancerName == "meningioma" ? (
+      {cancerName && cancerName == "meningioma" && user=='p'? (
         <div className="cancerIntructions">
           <ul>
             <li>
@@ -190,7 +202,70 @@ const App = () => {
       ) : (
         <></>
       )}
-       {cancerName && cancerName == "pituitary" ?
+
+
+       {cancerName && cancerName == "pituitary" && user=='d' ?
+       <div className="cancerIntructions">
+        <ul>
+          <li>Check hormone levels (prolactin, cortisol, ACTH, GH).</li>
+          <li>Start hormonal therapy if hormone-secreting tumor is present (e.g., dopamine agonists for prolactinoma).</li>
+          <li>Monitor vision regularly (visual field test) due to proximity to optic nerves.</li>
+          <li>Endocrinologist referral for hormone management.</li>
+          <li>Surgical option: Transsphenoidal surgery if tumor is large or pressing on nerves.</li>
+          <li>Aegular MRI follow-up every 6–12 months.</li>
+        </ul>
+       </div> 
+       :<></>}
+    
+    {cancerName && cancerName == "glioma" && user=='d'? (
+        <div className="cancerIntructions">
+          <ul>
+            <li>
+            Grade the tumor (low-grade vs high-grade).
+            </li>
+            <li>
+            Immediate neurosurgical evaluation for resection or biopsy.
+            </li>
+            <li>
+            Prepare for radiotherapy/chemotherapy for high-grade (e.g., Glioblastoma).
+            </li>
+            <li>Monitor for seizures, prescribe anti-epileptic drugs if needed.</li>
+            <li>
+            Recommend rehab and counseling for motor or cognitive impairments.
+            </li>
+            <li>
+            MRI every 3 months post-treatment to monitor regrowth.
+            </li>
+           
+          </ul>
+        </div>
+      ) : (
+        <></>
+      )}
+      {cancerName && cancerName == "meningioma" && user=='d'? (
+        <div className="cancerIntructions">
+          <ul>
+            
+            <li>
+            Check tumor size and location — most are benign and slow-growing.
+            </li>
+            <li>
+            Observation only if asymptomatic and less than 3 cm.
+            </li>
+            <li>Surgical removal if symptoms present or growth is observed.</li>
+            <li>Watch for brain pressure symptoms — nausea, vomiting, seizures.</li>
+            <li>
+            Schedule MRI follow-up every 6–12 months.
+            </li>
+            <li>
+            Consider radiation therapy if surgery is not possible or for recurrence.
+            </li>
+          </ul>
+        </div>
+      ) : (
+        <></>
+      )}
+       {cancerName && cancerName == "pituitary" && user=='p' ?
        <div className="cancerIntructions">
         <ul>
           <li>Follow Medication Plan – Take hormone therapy (dopamine agonists for prolactinomas) as prescribed.</li>
